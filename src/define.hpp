@@ -22,4 +22,6 @@ namespace kitti_raw {
     static constexpr auto DATA_DIR = "data";
     static constexpr auto TIMESTAMPS_FILE = "timestamps.txt";
     static constexpr auto DATAFORMAT_FILE = "dataformat.txt";
+
+    static constexpr auto IMG_EXT = ".png";
 }

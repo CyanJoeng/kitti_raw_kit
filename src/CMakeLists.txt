@@ -3,4 +3,7 @@ add_library(${MAIN_LIB} SHARED
     dataset.cpp
     config.cpp
     timestamp.cpp
+
+    data.cpp
+    image.cpp
     )

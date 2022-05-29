@@ -13,7 +13,7 @@ namespace kitti_raw {
 
     /**
      * time_str:   2011-09-26 13:02:37.004854985
-     * format_str: %Y-%m-%d %H:%M:%S.xxxms
+     * format_str: %Y-%m-%d %H:%M:%S.xxxus
      */
     Timestamp::Timestamp(const std::string &time_str) {
 
@@ -43,6 +43,17 @@ namespace kitti_raw {
     auto Timestamp::toSec() const -> double {
 
         return this->second_ + this->u_second_ * 1e-9;
+    }
+
+    auto Timestamp::printStr() const -> std::string {
+
+        std::stringstream ss;
+
+        std::time_t time = this->second_;
+        ss << std::put_time(std::gmtime(&time), "%c %Z");
+        ss << " " << this->u_second_;
+
+        return ss.str();
     }
 
     auto Timestamp::operator==(const Timestamp &inst) const -> bool {

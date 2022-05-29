@@ -20,6 +20,8 @@ namespace kitti_raw {
             return this->toSec();
         }
 
+        auto printStr() const -> std::string;
+
         auto operator== (const Timestamp& inst) const -> bool;
 
     private:

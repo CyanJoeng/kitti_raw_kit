@@ -14,3 +14,8 @@ add_executable(test_timestamp test_timestamp.cpp)
 target_link_libraries(test_timestamp ${MAIN_LIB})
 message(STATUS "\ttesting timestamp")
 add_test(NAME testing_timestamp COMMAND test_timestamp "2011-09-26 13:02:37.004854985" 1317042157.004854985)
+
+add_executable(test_dataset_image test_dataset_image.cpp)
+target_link_libraries(test_dataset_image ${MAIN_LIB})
+message(STATUS "\ttesting dataset image")
+add_test(NAME testing_data_image COMMAND test_dataset_image)
